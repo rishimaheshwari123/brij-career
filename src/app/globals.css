@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@keyframes scroll-left-to-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right-to-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.scroll-left-to-right {
+  display: flex;
+  animation: scroll-left-to-right 10s linear infinite;
+}
+
+.scroll-right-to-left {
+  display: flex;
+  animation: scroll-right-to-left 10s linear infinite;
+}
+
+.scroll-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
