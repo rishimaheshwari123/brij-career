@@ -33,8 +33,8 @@ const Contact = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v1/contact/send",
-        // "https://hospital-5z8n.onrender.com/api/v1/contact/send",
+        // "http://localhost:8080/api/v1/contact/send",
+        "https://brij-career.onrender.com/api/v1/contact/send",
         formData
       );
       if (response?.data) {
