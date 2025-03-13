@@ -6,7 +6,9 @@ const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
 const connectDB = require("./config/db");
-// const { cloudinaryConnect } = require("./config/cloudinary");
+const path = require('path');
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
 dotenv.config();

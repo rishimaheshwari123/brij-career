@@ -2,7 +2,8 @@ const mailSender = require("../utils/mailSender");
 const { eventContactEmail } = require("../templates/contactFormRes");
 const resumeSender = require("../utils/resumeSender");
 const fs = require('fs');
-
+const path = require('path');
+const Application = require('../models/applicationModel');
 
 
 const contactCtrl = async (req, res) => {
@@ -43,34 +44,71 @@ const submitApplication = async (req, res) => {
     }
 
     try {
-        const filePath = resume.tempFilePath;
+        // Define upload directory
+        const uploadDir = path.join(__dirname, '../uploads');
+        if (!fs.existsSync(uploadDir)) {
+            fs.mkdirSync(uploadDir, { recursive: true });
+        }
+
+        // Generate a unique filename
+        const fileName = `${Date.now()}_${resume.name}`;
+        const filePath = path.join(uploadDir, fileName);
+
+        // Move the uploaded file to the server
+        await resume.mv(filePath);
+
+        // Save application data to MongoDB
+        const newApplication = new Application({
+            name,
+            email,
+            contact,
+            message,
+            applicationFor,
+            resumeUrl: `/uploads/${fileName}` // Store file path in DB
+        });
+
+        await newApplication.save();
+
+        // Read resume file data
         const fileData = await fs.promises.readFile(filePath);
 
+        // Prepare email attachments
         const attachments = [{
             filename: resume.name,
             content: fileData.toString('base64'),
             encoding: 'base64',
         }];
 
+        // Email content
         const title = `Career Application from ${name}`;
         const body = `
-        <h2>Application Details</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Contact:</strong> ${contact}</p>
-        <p><strong>Application For:</strong> ${applicationFor}</p>
-        <p><strong>Message:</strong> ${message}</p>
-      `;
+            <h2>Application Details</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Contact:</strong> ${contact}</p>
+            <p><strong>Application For:</strong> ${applicationFor}</p>
+            <p><strong>Message:</strong> ${message}</p>
+        `;
 
-        console.log('Attachments:', attachments);
-
-        // Example call to resumeSender function
+        // Send resume via email
         await resumeSender(email, title, body, attachments);
 
-        res.status(200).json({ success: true, message: 'Application submitted successfully' });
+        res.status(201).json({ success: true, message: 'Application submitted successfully', data: newApplication });
+
     } catch (error) {
         console.error('Error handling application:', error);
         res.status(500).json({ success: false, message: 'Failed to submit application' });
     }
 };
-module.exports = { contactCtrl, submitApplication };
+
+
+const getAllApplications = async (req, res) => {
+    try {
+        const applications = await Application.find().sort({ createdAt: -1 }); // Get all applications, latest first
+        res.status(200).json({ success: true, data: applications });
+    } catch (error) {
+        console.error('Error fetching applications:', error);
+        res.status(500).json({ success: false, message: 'Failed to fetch applications' });
+    }
+};
+module.exports = { contactCtrl, submitApplication, getAllApplications };

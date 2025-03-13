@@ -58,7 +58,7 @@ const CareerForm = () => {
           contact: "",
           message: "",
           applicationFor: "",
-          resume: null,
+          resume: "",
         });
       }
     } catch (error) {
