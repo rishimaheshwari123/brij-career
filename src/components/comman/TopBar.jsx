@@ -12,22 +12,23 @@ const TopHeader = () => {
         <div className="bg-[#040232] text-white p-3 hidden md:block h-[50px] ">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 px-4">
             <div className="flex flex-wrap items-center space-x-6">
-              <Zoom triggerOnce>
+              {/* <Zoom triggerOnce>
                 <div className="flex items-center space-x-2">
                   <FiMapPin className="text-xl text-red-600 animate-pulse" />
                   <span className="font-semibold">
-                    1130 Senoia Road Suite B4 Tyrone GA 30290
+                    Office 510, B wing, Galleria Complex, Hiranandani Gardens,
+                    Powai, Mumbai 400076
                   </span>
                 </div>
-              </Zoom>
+              </Zoom> */}
               <Zoom triggerOnce delay={100}>
                 <div className="hidden md:flex items-center space-x-2">
                   <FiPhone className="text-xl text-green-600" />
                   <a
-                    href="tel:+14708513800"
+                    href="tel:+919202553151"
                     className="font-semibold hover:underline"
                   >
-                    +1 (470) 851-3800
+                    91 9202553151
                   </a>
                 </div>
               </Zoom>
@@ -36,10 +37,10 @@ const TopHeader = () => {
                 <div className="flex items-center space-x-2">
                   <FiMail className="text-xl text-blue-600" />
                   <a
-                    href="mailto:info@vitalcarega.com"
+                    href="mailto:HR@brijinternationalservices.com"
                     className="font-semibold hover:underline"
                   >
-                    info@vitalcarega.com
+                    HR@brijinternationalservices.com{" "}
                   </a>
                 </div>
               </Zoom>
@@ -47,10 +48,7 @@ const TopHeader = () => {
 
             <div className="flex space-x-4">
               <Zoom triggerOnce>
-                <Link
-                  href="https://www.facebook.com/share/1BAq26qeo6/?mibextid=wwXIfr"
-                  aria-label="Facebook"
-                >
+                <Link href="/" aria-label="Facebook">
                   <FaFacebook
                     size={22}
                     className="text-blue-600 hover:scale-125 transition-transform duration-300"
@@ -58,10 +56,7 @@ const TopHeader = () => {
                 </Link>
               </Zoom>
               <Zoom triggerOnce delay={100}>
-                <Link
-                  href="https://www.instagram.com/vitalcare__health?igsh=MXY0NnNsYWJmNHc1ag%3D%3D&utm_source=qr"
-                  aria-label="Instagram"
-                >
+                <Link href="/" aria-label="Instagram">
                   <FaInstagram
                     size={22}
                     className="text-pink-600 hover:scale-125 transition-transform duration-300"
@@ -81,7 +76,7 @@ const TopHeader = () => {
               </Zoom> */}
               <Zoom triggerOnce delay={300}>
                 <Link
-                  href="https://www.google.com/maps?q=1130+Senoia+Road+Suite+B4+Tyrone+GA+30290&z=17&hl=en"
+                  href="https://www.google.com/maps?q=Office+510,+B+wing,+Galleria+Complex,+Hiranandani+Gardens,+Powai,+Mumbai+400076&z=17&hl=en"
                   aria-label="Map"
                 >
                   <SiMaplibre
@@ -105,10 +100,10 @@ const TopHeader = () => {
           <div className="flex items-center space-x-2">
             <FiMail className="text-xl text-blue-600" />
             <a
-              href="mailto:info@vitalcarega.com"
+              href="mailto:HR@brijinternationalservices.com"
               className="font-semibold hover:underline"
             >
-              Email Us
+              HR@brijinternationalservices.com{" "}
             </a>
           </div>
         </div>
@@ -117,19 +112,16 @@ const TopHeader = () => {
           <div className="flex items-center space-x-2">
             <FiPhone className="text-xl text-green-600" />
             <a
-              href="tel:+14708513800"
+              href="tel:+919202553151"
               className="font-semibold hover:underline"
             >
-              +1 (470) 851-3800
+              91 9202553151
             </a>
           </div>
 
           <div className="flex space-x-4">
             <Zoom triggerOnce>
-              <Link
-                href="https://www.facebook.com/share/1BAq26qeo6/?mibextid=wwXIfr"
-                aria-label="Facebook"
-              >
+              <Link href="" aria-label="Facebook">
                 <FaFacebook
                   size={22}
                   className="text-blue-600 hover:scale-125 transition-transform duration-300"
@@ -137,10 +129,7 @@ const TopHeader = () => {
               </Link>
             </Zoom>
             <Zoom triggerOnce delay={100}>
-              <Link
-                href="https://www.instagram.com/vitalcare__health?igsh=MXY0NnNsYWJmNHc1ag%3D%3D&utm_source=qr"
-                aria-label="Instagram"
-              >
+              <Link href="" aria-label="Instagram">
                 <FaInstagram
                   size={22}
                   className="text-pink-600 hover:scale-125 transition-transform duration-300"
@@ -150,7 +139,7 @@ const TopHeader = () => {
 
             <Zoom triggerOnce delay={300}>
               <Link
-                href="https://www.google.com/maps?q=1130+Senoia+Road+Suite+B4+Tyrone+GA+30290&z=17&hl=en"
+                href="https://www.google.com/maps?q=Office+510,+B+wing,+Galleria+Complex,+Hiranandani+Gardens,+Powai,+Mumbai+400076&z=17&hl=en"
                 aria-label="Map"
               >
                 <SiMaplibre
