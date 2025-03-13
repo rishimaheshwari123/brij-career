@@ -30,7 +30,7 @@ const HeroSection = () => {
           <div className="mt-4 flex flex-col lg:flex-row gap-2">
             <Link
               href={"/job"}
-              className="bg-[#040232] text-white px-6 py-2.5 rounded-md hover:bg-[#00a69b] transition-colors font-medium"
+              className="bg-[#040232] text-center text-white px-6 py-2.5 rounded-md hover:bg-[#00a69b] transition-colors font-medium"
             >
               Find Your Perfect Job{" "}
             </Link>
