@@ -1,9 +1,28 @@
 import Image from "next/image";
 import bg from "@/assets/bg1.jpg";
 import Link from "next/link";
+
+const expertiseList = [
+  "Property, Engineering, Construction & Manufacturing",
+  "IT & Data Center",
+  "Creative, Arts, Design & Media",
+  "Training, Education & Coach's",
+  "Oil & Gas",
+  "Financial Services",
+  "Banking & Finance",
+  "Sales, Retails & Marketing",
+  "Finance And Business",
+  "Charity & Voluntary Work",
+  "Health Care",
+  "Restaurant, Hospitality & Event Management",
+  "Senior ID Engineer",
+  "Project & Construction Manager",
+  "Auditor",
+];
+
 export default function ExpertiseSection() {
   return (
-    <section className="relative w-full h-screen flex items-center justify-center text-white">
+    <section className="relative w-full h-full py-20 flex items-center justify-center text-white">
       <div className="absolute inset-0">
         <Image
           src={bg}
@@ -14,26 +33,15 @@ export default function ExpertiseSection() {
         />
       </div>
 
-      {/* Content */}
       <div className="relative text-center">
-        <h3 className="text-lg text-[#040232] font-semibold">What We Do</h3>
         <h2 className="text-4xl font-bold mb-6">Areas of Expertise</h2>
 
-        {/* Expertise Grid */}
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="space-y-4">
-            <ExpertiseItem title="Banking and Financial" />
-            <ExpertiseItem title="Sales and Account Management" />
-            <ExpertiseItem title="Engineering and Technicians" />
-          </div>
-          <div className="space-y-4">
-            <ExpertiseItem title="Retail, Ecommerce, FMCG" />
-            <ExpertiseItem title="Support and Operation" />
-            <ExpertiseItem title="Logistics & Oil and Gas" />
-          </div>
+          {expertiseList.map((title, index) => (
+            <ExpertiseItem key={index} title={title} />
+          ))}
         </div>
 
-        {/* Upload CV Button */}
         <Link
           href={"/contact"}
           className="mt-8 w-fit bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full text-lg flex items-center justify-center gap-2"
@@ -47,11 +55,13 @@ export default function ExpertiseSection() {
 
 function ExpertiseItem({ title }) {
   return (
-    <div className="flex items-center justify-between px-6 py-3 bg-white bg-opacity-10 border border-white rounded-lg">
-      <span className="text-lg font-medium">{title}</span>
-      <div className="w-8 h-8 flex items-center justify-center bg-blue-500 rounded-full">
-        <span className="text-white text-xl">➜</span>
+    <Link href="/job" className="block">
+      <div className="flex items-center justify-between px-6 py-3 bg-white bg-opacity-10 border border-white rounded-lg cursor-pointer hover:bg-opacity-20">
+        <span className="text-lg font-medium">{title}</span>
+        <div className="w-8 h-8 flex items-center justify-center bg-blue-500 rounded-full">
+          <span className="text-white text-xl">➜</span>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }

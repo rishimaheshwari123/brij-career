@@ -38,13 +38,18 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/services" className="hover:text-white">
-                Services
+              <Link href="/employers" className="hover:text-white">
+                Employers
               </Link>
             </li>
             <li>
-              <Link href="/cathlab" className="hover:text-white">
-                Cath Lab
+              <Link href="/candidates" className="hover:text-white">
+                Candidates
+              </Link>
+            </li>
+            <li>
+              <Link href="/job" className="hover:text-white">
+                Job
               </Link>
             </li>
           </ul>
@@ -53,7 +58,7 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-semibold mb-4">Get in touch</h3>
           <p className="flex items-center gap-2 text-white">
-            <FaPhoneAlt /> +91 6262 555 075
+            <FaPhoneAlt /> 91 9202553151
           </p>
           <p className="flex items-center gap-2 text-white">
             <MdOutlineMail /> brij.dubai@gmail.com
@@ -65,9 +70,6 @@ const Footer = () => {
             Mumbai 400076
           </p>
         </div>
-      </div>
-      <div className="max-w-7xl mx-auto mt-5">
-        <hr />
       </div>
 
       <div className="mt-5 border-t border-gray-700 pt-6 text-center text-white">

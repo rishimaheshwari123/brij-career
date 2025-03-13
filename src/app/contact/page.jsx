@@ -78,14 +78,17 @@ const Contact = () => {
             <span className="p-3 bg-[#040232] text-white rounded-full text-xl">
               <FaLocationDot />
             </span>
-            <span className="text-gray-700">Address</span>
+            <span className="text-gray-700">
+              AddrOffice 510, B wing, Galleria Complex, Hiranandani Gardens,
+              Powai, Mumbai 400076ess
+            </span>
           </div>
 
           <div className="flex items-center gap-4">
             <span className="p-3 bg-[#040232] text-white rounded-full text-xl">
               <FaPhone />
             </span>
-            <span className="text-gray-700"> +91 6262 555 075</span>
+            <span className="text-gray-700"> 91 9202553151</span>
           </div>
           <div className="flex items-center gap-4">
             <span className="p-3 bg-[#040232] text-white rounded-full text-xl">

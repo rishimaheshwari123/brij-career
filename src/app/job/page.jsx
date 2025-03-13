@@ -98,7 +98,7 @@ const CareerForm = () => {
         ))}
 
         <div>
-          <label className="block text-lg mb-2">Select Position</label>
+          <label className="block text-lg mb-2">Select Job Field</label>
           <select
             name="applicationFor"
             className="w-full border border-gray-300 rounded-lg p-3 text-lg"
@@ -106,17 +106,23 @@ const CareerForm = () => {
             onChange={handleChange}
             required
           >
-            <option value="">-- Select Position --</option>
+            <option value="">-- Select Field --</option>
             {[
-              "React JS Developer",
-              "Node.js Developer",
-              "Frontend Developer",
-              "Backend Developer",
-              "Software Engineer",
-              "UI/UX Designer",
-              "Full Stack Developer",
-              "MERN Stack Developer",
-              "PHP Developer",
+              "Property, Engineering, Construction & Manufacturing",
+              "IT & Data Center",
+              "Creative, Arts, Design & Media",
+              "Training, Education & Coach's",
+              "Oil & Gas",
+              "Financial Services",
+              "Banking & Finance",
+              "Sales, Retails & Marketing",
+              "Finance And Business",
+              "Charity & Voluntary Work",
+              "Health Care",
+              "Restaurant, Hospitality & Event Management",
+              "Senior ID Engineer",
+              "Project & Construction Manager",
+              "Auditor",
             ].map((position) => (
               <option key={position} value={position}>
                 {position}
@@ -127,7 +133,7 @@ const CareerForm = () => {
 
         <div>
           <label className="block text-lg mb-2" htmlFor="message">
-            Message
+            Message For Hiring Manager{" "}
           </label>
           <textarea
             id="message"

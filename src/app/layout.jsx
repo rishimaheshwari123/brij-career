@@ -2,6 +2,7 @@ import Navbar from "@/components/comman/Navbar";
 import "./globals.css";
 import Footer from "@/components/comman/Footer";
 import TopHeader from "@/components/comman/TopBar";
+import FixedIcons from "@/components/comman/FixedIcons";
 
 export default function RootLayout({ children }) {
   return (
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
         {children}
         <br />
         <br />
+        <FixedIcons />
         <Footer />
       </body>
     </html>

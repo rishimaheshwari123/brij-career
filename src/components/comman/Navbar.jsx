@@ -63,8 +63,9 @@ const Navbar = () => {
               <Link href="/job">Job</Link>
             </li>
             <li className="cursor-pointer hover:text-[#040232] transition-colors">
-              <Link href="/contact">Contact</Link>
+              <Link href="/what-we-do">What We Do</Link>
             </li>
+
             {/* <li
               className="relative cursor-pointer group"
               onMouseEnter={() => setIsServicesOpen(true)}
@@ -120,7 +121,7 @@ const Navbar = () => {
             <div className="flex items-center gap-2 text-gray-700">
               <FiPhone className="w-5 h-5" />
               <a href="tel:+916262555075" className="font-medium">
-                +91 6262 555 075
+                91 9202553151
               </a>
             </div>
             <div className="flex gap-4">
@@ -128,7 +129,7 @@ const Navbar = () => {
                 href={"/contact"}
                 className="bg-[#040232] text-white px-6 py-2.5 rounded-md hover:bg-[#00a69b] transition-colors font-medium"
               >
-                Schedule an contact
+                Get Contact
               </Link>
             </div>
           </div>
@@ -157,15 +158,14 @@ const Navbar = () => {
                 Candidates
               </Link>
             </li>
-            <li>
-              <Link href="/contact" className="block py-2">
-                Contact
-              </Link>
-            </li>
+
             <li>
               <Link href="/job" className="block py-2">
                 Job
               </Link>
+            </li>
+            <li>
+              <Link href="/what-we-do">What We Do</Link>
             </li>
             {/* <li>
               <button
@@ -214,7 +214,7 @@ const Navbar = () => {
               <div className="flex items-center gap-2 my-2">
                 <FiPhone className="w-5 h-5" />
                 <span href="tel:+916262555075" className="font-medium">
-                  +91 6262 555 075
+                  91 9202553151
                 </span>
               </div>
             </li>
@@ -224,7 +224,7 @@ const Navbar = () => {
                 href={"/contact"}
                 className="bg-[#00BFB3] text-white px-6 py-2.5 rounded-md hover:bg-[#00a69b] transition-colors font-medium"
               >
-                Schedule an contact
+                Get Contact
               </Link>
             </div>
           </ul>

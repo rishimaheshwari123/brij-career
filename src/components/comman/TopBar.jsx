@@ -94,10 +94,6 @@ const TopHeader = () => {
       <div className="bg-[#c5dee4] text-black p-4 md:hidden">
         <div className="flex flex-wrap items-center justify-between space-x-4">
           <div className="flex items-center space-x-2">
-            <FiMapPin className="text-xl text-red-600 animate-pulse" />
-            <span className="font-semibold">B4 Tyrone GA</span>
-          </div>
-          <div className="flex items-center space-x-2">
             <FiMail className="text-xl text-blue-600" />
             <a
               href="mailto:HR@brijinternationalservices.com"

@@ -38,7 +38,7 @@ export default function JobOpportunities() {
         <div className="w-full md:w-1/2">
           <h2 className="text-2xl md:text-4xl font-bold text-center md:text-left mb-6">
             Discover overseas job opportunities in{" "}
-            <span className="text-[#040232]">
+            <span className="text-blue-400">
               {locations[locationIndex].city},{" "}
               {locations[locationIndex].country}
             </span>

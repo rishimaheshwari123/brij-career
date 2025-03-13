@@ -1,6 +1,6 @@
 export default function StatsSection() {
   return (
-    <section className="bg-gradient-to-r from-blue-600 to-blue-900 py-12">
+    <section className="bg-[#040232] py-12">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
         {/* Stat Item */}
         <div>
