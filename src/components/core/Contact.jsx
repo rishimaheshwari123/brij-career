@@ -34,8 +34,8 @@ const Contact = () => {
 
     try {
       const response = await axios.post(
-        // "http://localhost:8080/api/v1/contact/send",
-        "https://brij-career.onrender.com/api/v1/contact/send",
+        `${process.env.NEXT_PUBLIC_BASE_URL}/contact/send`,
+
         formData
       );
       if (response?.data) {

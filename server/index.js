@@ -5,9 +5,12 @@ const cors = require("cors")
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
+const connectDB = require("./config/db");
+// const { cloudinaryConnect } = require("./config/cloudinary");
 
 
 dotenv.config();
+connectDB();
 
 const PORT = process.env.PORT || 8080
 
@@ -28,9 +31,12 @@ app.use(
         tempFileDir: "/tmp"
     })
 )
+// cloudinaryConnect();
+
 
 
 app.use("/api/v1/contact", require("./routes/contactRoute"))
+app.use("/api/v1/auth", require("./routes/authRoute"))
 
 
 

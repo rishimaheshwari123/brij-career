@@ -39,8 +39,7 @@ const CareerForm = () => {
 
     try {
       const response = await axios.post(
-        // `http://localhost:8080/api/v1/contact/career`,
-        "https://brij-career.onrender.com/api/v1/contact/career",
+        `${process.env.NEXT_PUBLIC_BASE_URL}/contact/career`,
         data,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
