@@ -5,7 +5,7 @@ import { FiPhone } from "react-icons/fi";
 import { IoMenu, IoClose } from "react-icons/io5";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo2.png";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -27,15 +27,11 @@ const Navbar = () => {
           : "max-w-[92%] mx-auto fixed top-14 left-0 right-0 rounded-lg"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6  py-2">
+      <nav className="max-w-7xl mx-auto px-6  ">
         <div className="flex justify-between items-center">
           {/* Logo and Mobile Menu Button */}
           <div className="flex justify-between w-full lg:w-auto items-center">
-            <Image
-              src={logo}
-              alt="not found"
-              className="lg:w-[70px] w-[45px]"
-            />
+            <Image src={logo} alt="not found" className="w-44 lg:w-64" />
 
             <button
               className="lg:hidden text-2xl"
