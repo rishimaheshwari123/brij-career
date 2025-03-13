@@ -1,17 +1,19 @@
 import Navbar from "@/components/comman/Navbar";
 import "./globals.css";
-import SubNavbar from "@/components/comman/SubNav";
 import Footer from "@/components/comman/Footer";
+import TopHeader from "@/components/comman/TopBar";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
         <div className="hidden lg:block">
-          <SubNavbar />
+          <TopHeader />
         </div>
         <Navbar />
         {children}
+        <br />
+        <br />
         <Footer />
       </body>
     </html>

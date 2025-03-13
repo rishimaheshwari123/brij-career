@@ -68,20 +68,20 @@ const Contact = () => {
       <div className="grid lg:grid-cols-2 gap-10 my-20 items-center">
         <div className="space-y-6">
           <div className="flex items-center gap-4">
-            <span className="p-3 bg-blue-400 text-white rounded-full text-xl">
+            <span className="p-3 bg-[#040232] text-white rounded-full text-xl">
               <FaLocationDot />
             </span>
             <span className="text-gray-700">Address</span>
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="p-3 bg-blue-400 text-white rounded-full text-xl">
+            <span className="p-3 bg-[#040232] text-white rounded-full text-xl">
               <FaPhone />
             </span>
             <span className="text-gray-700"> +91 6262 555 075</span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="p-3 bg-blue-400 text-white rounded-full text-xl">
+            <span className="p-3 bg-[#040232] text-white rounded-full text-xl">
               <MdEmail />
             </span>
             <span className="text-gray-700"> brij.dubai@gmail.com</span>
@@ -130,7 +130,7 @@ const Contact = () => {
           ></textarea>
           <button
             type="submit"
-            className="flex items-center gap-2 bg-blue-400 text-white px-5 py-3 rounded-md mt-4 w-full justify-center hover:bg-teal-600 transition-all"
+            className="flex items-center gap-2 bg-[#040232] text-white px-5 py-3 rounded-md mt-4 w-full justify-center hover:bg-teal-600 transition-all"
           >
             <FaPaperPlane /> Send Message
           </button>

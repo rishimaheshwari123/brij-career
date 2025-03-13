@@ -55,7 +55,7 @@ export default function CareerSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Brij International Jobs is the leading overseas career counseling
             firm for job opportunities in{" "}
-            <span className="text-blue-400">
+            <span className="text-[#040232]">
               {locations[locationIndex].city},{" "}
               {locations[locationIndex].country}
             </span>

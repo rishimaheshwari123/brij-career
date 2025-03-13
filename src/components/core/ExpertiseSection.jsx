@@ -16,7 +16,7 @@ export default function ExpertiseSection() {
 
       {/* Content */}
       <div className="relative text-center">
-        <h3 className="text-lg text-blue-400 font-semibold">What We Do</h3>
+        <h3 className="text-lg text-[#040232] font-semibold">What We Do</h3>
         <h2 className="text-4xl font-bold mb-6">Areas of Expertise</h2>
 
         {/* Expertise Grid */}

@@ -38,7 +38,7 @@ export default function JobOpportunities() {
         <div className="w-full md:w-1/2">
           <h2 className="text-2xl md:text-4xl font-bold text-center md:text-left mb-6">
             Discover overseas job opportunities in{" "}
-            <span className="text-blue-400">
+            <span className="text-[#040232]">
               {locations[locationIndex].city},{" "}
               {locations[locationIndex].country}
             </span>
@@ -66,7 +66,7 @@ export default function JobOpportunities() {
               "Pharmaceuticals",
             ].map((job, index) => (
               <div key={index} className="flex items-center gap-2 text-lg">
-                <span className="text-blue-400">➜</span>
+                <span className="text-[#040232]">➜</span>
                 {job}
               </div>
             ))}

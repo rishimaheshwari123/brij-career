@@ -18,7 +18,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-[#134e5a] text-white py-12">
+    <footer className="bg-[#040232] text-white py-12">
       <div className="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <Image src={logo} alt="not found" className="w-[70px]" />

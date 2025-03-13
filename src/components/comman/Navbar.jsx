@@ -24,7 +24,7 @@ const Navbar = () => {
       className={`transition-all duration-300 z-50 bg-white  ${
         isScrolled
           ? "fixed top-0 left-0 right-0 w-full shadow-lg"
-          : "max-w-[92%] mx-auto fixed top-12 left-0 right-0 rounded-lg"
+          : "max-w-[92%] mx-auto fixed top-14 left-0 right-0 rounded-lg"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6  py-2">
@@ -47,22 +47,22 @@ const Navbar = () => {
 
           {/* Desktop Navbar */}
           <ul className="hidden lg:flex items-center space-x-8 text-gray-700 font-medium ">
-            <li className="cursor-pointer hover:text-blue-400 transition-colors">
+            <li className="cursor-pointer hover:text-[#040232] transition-colors">
               <Link href="/">Home</Link>
             </li>
-            <li className="cursor-pointer hover:text-blue-400 transition-colors">
+            <li className="cursor-pointer hover:text-[#040232] transition-colors">
               <Link href="/about">About</Link>
             </li>
-            <li className="cursor-pointer hover:text-blue-400 transition-colors">
+            <li className="cursor-pointer hover:text-[#040232] transition-colors">
               <Link href="/employers">Employers</Link>
             </li>
-            <li className="cursor-pointer hover:text-blue-400 transition-colors">
+            <li className="cursor-pointer hover:text-[#040232] transition-colors">
               <Link href="/candidates">Candidates</Link>
             </li>
-            <li className="cursor-pointer hover:text-blue-400 transition-colors">
+            <li className="cursor-pointer hover:text-[#040232] transition-colors">
               <Link href="/job">Job</Link>
             </li>
-            <li className="cursor-pointer hover:text-blue-400 transition-colors">
+            <li className="cursor-pointer hover:text-[#040232] transition-colors">
               <Link href="/contact">Contact</Link>
             </li>
             {/* <li
@@ -126,7 +126,7 @@ const Navbar = () => {
             <div className="flex gap-4">
               <Link
                 href={"/contact"}
-                className="bg-blue-400 text-white px-6 py-2.5 rounded-md hover:bg-[#00a69b] transition-colors font-medium"
+                className="bg-[#040232] text-white px-6 py-2.5 rounded-md hover:bg-[#00a69b] transition-colors font-medium"
               >
                 Schedule an contact
               </Link>
