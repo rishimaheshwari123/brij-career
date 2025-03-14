@@ -61,7 +61,7 @@ const Footer = () => {
             <FaPhoneAlt /> 91 9202553151
           </p>
           <p className="flex items-center gap-2 text-white">
-            <MdOutlineMail /> brij.dubai@gmail.com
+            <MdOutlineMail /> HR@brijinternationalservices.com
           </p>
 
           <p className="flex items-start gap-2 text-white mt-4">

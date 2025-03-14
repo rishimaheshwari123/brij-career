@@ -1,81 +1,131 @@
 import { FaBuilding, FaMapMarkerAlt, FaUserTie, FaGlobe } from "react-icons/fa";
+import anand from "@/assets/anand.jpg";
+import brij from "@/assets/brij.jpg";
+import prachi from "@/assets/prachi.jpg";
+import mustfa from "@/assets/mustfa.png";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
-    <div className=" min-h-screen max-w-7xl mx-auto py-10 px-6 mt-20">
-      {/* Main Container */}
-      <div className=" bg-white  p-8">
-        {/* Heading */}
-        <h1 className="text-4xl font-bold text-[#040232] text-center mb-2">
+    <div className="min-h-screen max-w-7xl mx-auto py-12 px-6 mt-20">
+      {/* Heading Section */}
+      <div className="text-center">
+        <h1 className="text-5xl font-extrabold text-[#040232] mb-4">
           Brij International Services
         </h1>
-        <p className="text-lg text-gray-700 text-center">
+        <p className="text-lg text-gray-700 max-w-3xl mx-auto">
           <FaGlobe className="inline-block text-[#040232] mr-2" />
-          Strategic Partners from across the Globe
+          Bridging the gap between skilled professionals and global businesses.
         </p>
+      </div>
 
-        {/* Partners Section */}
+      {/* Introduction */}
+      <div className="mt-10 text-center max-w-4xl mx-auto text-gray-800 text-lg leading-relaxed">
+        <p>
+          Brij International Services is a premier recruitment agency in India,
+          dedicated to ethically outsourcing talented professionals worldwide.
+          For over 8 years, we have been connecting businesses with skilled
+          individuals, ensuring the right person for the right job.
+        </p>
+        <p className="mt-4">
+          Our commitment to ethical hiring and a meticulous recruitment process
+          makes us a trusted partner for global businesses. We align with our
+          clients and candidates, eliminating unethical procedures and ensuring
+          a seamless recruitment experience.
+        </p>
+      </div>
 
-        <div className="mt-8 grid md:grid-cols-3 gap-6">
+      {/* Partners Section */}
+      <div className="mt-16">
+        <h2 className="text-3xl font-bold text-[#040232] text-center">
+          Strategic Partners
+        </h2>
+        <div className="mt-10 grid md:grid-cols-4 gap-8">
           {[
-            { name: "Mr. Fayze", location: "Dubai" },
-            { name: "Mr. Mustafa Belkhayate", location: "Morocco" },
-            { name: "Mr. Gaybean", location: "Spain" },
+            {
+              name: "Mr. Anand Kumar Jha",
+              location: "Dubai, UAE",
+              role: "Rshmy Technical Services - Strategic Partner",
+              image: anand,
+            },
+            {
+              name: "Mr. Brijesh Tiwari",
+              location: "",
+              role: "Founder - Brij International Services",
+              image: brij,
+            },
+            {
+              name: "Mrs. Prachi",
+              location: "Mumbai, India",
+              role: "CEO - Brij International Services",
+              image: prachi,
+            },
+            {
+              name: "Mr. Mustafa Belkhayate",
+              location: "Morocco",
+              role: "Hydrokken - Strategic Partner",
+              image: mustfa,
+            },
           ].map((partner, index) => (
             <div
               key={index}
-              className="bg-white shadow-lg p-5 rounded-lg text-center transform hover:scale-105 transition duration-300"
+              className="relative group rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
             >
-              <FaUserTie className="text-[#040232] text-3xl mx-auto mb-3" />
-              <h3 className="text-xl font-semibold text-gray-800">
-                {partner.name}
-              </h3>
-              <p className="text-gray-600">{partner.location}</p>
+              <Image
+                src={partner.image}
+                alt={partner.name}
+                className="w-full h-[50vh] object-cover"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white p-4 transition-opacity duration-300">
+                <h3 className="text-xl font-semibold">{partner.name}</h3>
+                <p className="text-sm font-medium text-center">
+                  {partner.role}
+                </p>
+                <p className="text-sm">{partner.location}</p>
+              </div>
             </div>
           ))}
         </div>
-        <br />
-        <br />
-        <br />
-        {/* Office Locations */}
-        <div className="mt-12">
-          <h2 className="text-3xl font-semibold text-[#040232] text-center">
-            <FaBuilding className="inline-block mr-2" />
-            Our Offices
-          </h2>
+      </div>
 
-          <div className="mt-6 grid md:grid-cols-2 gap-6">
-            {/* Mumbai Office */}
-            <div className="bg-white shadow-lg p-6 rounded-lg transform hover:scale-105 transition duration-300">
+      {/* Office Locations */}
+      <div className="mt-16">
+        <h2 className="text-3xl font-bold text-[#040232] text-center">
+          <FaBuilding className="inline-block mr-2" /> Our Offices
+        </h2>
+        <div className="mt-8 grid md:grid-cols-2 gap-8">
+          {[
+            {
+              location: "Mumbai, India",
+              address:
+                "Office 510, B Wing, Galleria Complex, Hiranandani Gardens, Powai, Mumbai 400076",
+            },
+            {
+              location: "Bhopal, India",
+              address:
+                "404, Wing B4, Katara Hills, Bhopal (MP) - India, 462002",
+            },
+          ].map((office, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-lg p-6 rounded-lg transform hover:scale-105 transition duration-300"
+            >
               <h3 className="text-xl font-semibold text-gray-800 flex items-center">
-                <FaMapMarkerAlt className="text-[#040232] mr-2" /> Mumbai, India
+                <FaMapMarkerAlt className="text-[#040232] mr-2" />{" "}
+                {office.location}
               </h3>
-              <p className="text-gray-600 mt-2">
-                Office 510, B Wing, Galleria Complex, <br />
-                Hiranandani Gardens, Powai, Mumbai 400076
-              </p>
+              <p className="text-gray-600 mt-2">{office.address}</p>
             </div>
+          ))}
+        </div>
+      </div>
 
-            {/* Bhopal Office */}
-            <div className="bg-white shadow-lg p-6 rounded-lg transform hover:scale-105 transition duration-300">
-              <h3 className="text-xl font-semibold text-gray-800 flex items-center">
-                <FaMapMarkerAlt className="text-[#040232] mr-2" /> Bhopal, India
-              </h3>
-              <p className="text-gray-600 mt-2">
-                404, Wing B4, Katara Hills, <br />
-                Bhopal (MP) - India, 462002
-              </p>
-            </div>
-          </div>
-        </div>
-        <br />
-        <br />
-        {/* Recruitment Info */}
-        <div className="mt-12 text-center">
-          <p className="text-lg font-semibold text-gray-800 bg-blue-100 p-4 rounded-lg shadow-md">
-            🚀 We specialize in **recruitment services** globally.
-          </p>
-        </div>
+      {/* Recruitment Info */}
+      <div className="mt-16 text-center">
+        <p className="text-lg font-semibold text-gray-800 bg-blue-100 p-4 rounded-lg shadow-md">
+          🚀 We specialize in ethical and transparent global recruitment
+          services.
+        </p>
       </div>
     </div>
   );

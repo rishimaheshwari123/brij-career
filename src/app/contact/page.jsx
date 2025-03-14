@@ -93,7 +93,10 @@ const Contact = () => {
             <span className="p-3 bg-[#040232] text-white rounded-full text-xl">
               <MdEmail />
             </span>
-            <span className="text-gray-700"> brij.dubai@gmail.com</span>
+            <span className="text-gray-700">
+              {" "}
+              HR@brijinternationalservices.com
+            </span>
           </div>
         </div>
 

@@ -1,21 +1,29 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
+import backgroundImage from "@/assets/emp.jpg"; // Ensure correct path
 
 const HeroSection = () => {
   return (
     <div className="relative bg-[#00a0aa]/30">
-      <div className="w-[98vw] top-0 lg:rounded-br-[250px] overflow-hidden -z-50">
-        <video autoPlay muted loop className="w-full h-[90vh] object-cover">
-          <source src="/slider.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div className="absolute inset-0 w-[98vw] lg:rounded-br-[250px] bg-black bg-opacity-65"></div>
+      <div className="relative w-[98vw] h-[90vh] lg:rounded-br-[250px] overflow-hidden">
+        {/* Background Image */}
+        <Image
+          src={backgroundImage}
+          alt="Team Meeting"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
 
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/20"></div>
+
+        {/* Content */}
         <div
           className="absolute inset-0 flex flex-col justify-center mt-10 px-6 lg:px-16 text-white  
           lg:items-start lg:text-left sm:items-center sm:text-center"
         >
-          {/* "Your Career House Since 2017" Section */}
           <div className="text-center lg:text-left">
             <h2 className="text-3xl lg:text-5xl font-bold text-white">
               Your <span className="text-[#c0915a]">Career House</span>
@@ -25,27 +33,18 @@ const HeroSection = () => {
             </h3>
           </div>
 
-          <br />
-
-          {/* Main Heading */}
           <h1 className="text-4xl lg:text-6xl font-bold text-white mt-4">
             Feel local. Go global.
           </h1>
 
-          <br />
-
-          {/* Description */}
           <p className="text-lg lg:text-xl mt-2 max-w-lg text-white">
             Our mission is to bridge the gap between skilled professionals and
-            global businesses
+            global businesses.
           </p>
 
-          <br />
-
-          {/* Buttons */}
           <div className="mt-4 flex flex-col lg:flex-row gap-2">
             <Link
-              href={"/job"}
+              href="/job"
               className="bg-[#040232] text-center text-white px-6 py-2.5 rounded-md hover:bg-[#00a69b] transition-colors font-medium"
             >
               Find Your Perfect Job
@@ -54,7 +53,7 @@ const HeroSection = () => {
               href="tel:919202553151"
               className="bg-[#040232] text-center text-white px-6 py-2.5 rounded-md hover:bg-[#00a69b] transition-colors font-medium"
             >
-              91 9202553151
+              +91 9202553151
             </a>
           </div>
         </div>

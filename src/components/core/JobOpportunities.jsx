@@ -1,5 +1,5 @@
 "use client";
-import job from "@/assets/job1.jpg";
+import job from "@/assets/hero.jpg";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 

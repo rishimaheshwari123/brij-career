@@ -33,10 +33,10 @@ export default function ExpertiseSection() {
         />
       </div>
 
-      <div className="relative text-center">
+      <div className="relative text-center md:max-w-6xl md:w-full px-">
         <h2 className="text-4xl font-bold mb-6">Areas of Expertise</h2>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 w-full">
           {expertiseList.map((title, index) => (
             <ExpertiseItem key={index} title={title} />
           ))}
@@ -44,7 +44,7 @@ export default function ExpertiseSection() {
 
         <Link
           href={"/contact"}
-          className="mt-8 w-fit bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full text-lg flex items-center justify-center gap-2"
+          className="mt-8 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full text-lg inline-flex items-center justify-center gap-2"
         >
           Contact US <span className="text-lg">➜</span>
         </Link>
@@ -54,10 +54,20 @@ export default function ExpertiseSection() {
 }
 
 function ExpertiseItem({ title }) {
+  const modifiedTitle =
+    title === "Property, Engineering, Construction & Manufacturing" ? (
+      <>
+        Property, Engineering, Construction
+        <br className="block sm:hidden" /> & Manufacturing
+      </>
+    ) : (
+      title
+    );
+
   return (
     <Link href="/job" className="block">
-      <div className="flex items-center justify-between px-6 py-3 bg-white bg-opacity-10 border border-white rounded-lg cursor-pointer hover:bg-opacity-20">
-        <span className="text-lg font-medium">{title}</span>
+      <div className="flex  items-center justify-between px-6 py-3 bg-white bg-opacity-10 border border-white rounded-lg cursor-pointer hover:bg-opacity-20">
+        <span className="text-lg font-medium text-start">{modifiedTitle}</span>
         <div className="w-8 h-8 flex items-center justify-center bg-blue-500 rounded-full">
           <span className="text-white text-xl">➜</span>
         </div>
