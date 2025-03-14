@@ -29,7 +29,12 @@ const applicationSchema = new mongoose.Schema({
     resumeUrl: {
         type: String,
         required: true
-    }
+    },
+    jobId: {
+        type: String,
+        required: true,
+        trim: true
+    },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Application', applicationSchema);

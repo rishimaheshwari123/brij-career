@@ -4,7 +4,7 @@ const resumeSender = require("../utils/resumeSender");
 const fs = require('fs');
 const path = require('path');
 const Application = require('../models/applicationModel');
-
+const contactModel = require("../models/contactModel")
 
 const contactCtrl = async (req, res) => {
     const { name, email, contact, message, } = req.body;
@@ -17,6 +17,7 @@ const contactCtrl = async (req, res) => {
                 success: false
             })
         }
+        await contactModel.create({ name, email, contact, message });
         const emailRes = await mailSender(
             "rishimaheshwari040@gmail.com",
             "Your Data send successfully",
@@ -36,7 +37,7 @@ const contactCtrl = async (req, res) => {
     }
 }
 const submitApplication = async (req, res) => {
-    const { name, email, contact, message, applicationFor } = req.body;
+    const { name, email, contact, message, applicationFor, jobId } = req.body;
     const resume = req.files?.resume;
 
     if (!resume) {
@@ -64,7 +65,8 @@ const submitApplication = async (req, res) => {
             contact,
             message,
             applicationFor,
-            resumeUrl: `/uploads/${fileName}` // Store file path in DB
+            resumeUrl: `/uploads/${fileName}`, // Store file path in DB
+            jobId
         });
 
         await newApplication.save();
@@ -102,13 +104,13 @@ const submitApplication = async (req, res) => {
 };
 
 
-const getAllApplications = async (req, res) => {
+const getAllContact = async (req, res) => {
     try {
-        const applications = await Application.find().sort({ createdAt: -1 }); // Get all applications, latest first
+        const applications = await contactModel.find().sort({ createdAt: -1 }); // Get all applications, latest first
         res.status(200).json({ success: true, data: applications });
     } catch (error) {
         console.error('Error fetching applications:', error);
         res.status(500).json({ success: false, message: 'Failed to fetch applications' });
     }
 };
-module.exports = { contactCtrl, submitApplication, getAllApplications };
+module.exports = { contactCtrl, submitApplication, getAllContact };

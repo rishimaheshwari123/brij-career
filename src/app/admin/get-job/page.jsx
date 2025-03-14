@@ -5,7 +5,7 @@ import axios from "axios";
 import Link from "next/link";
 import { FaPlus, FaMinus } from "react-icons/fa";
 
-const JobsPage = () => {
+const GetJob = () => {
   const [jobs, setJobs] = useState([]);
   const [expandedJob, setExpandedJob] = useState(null);
 
@@ -31,7 +31,7 @@ const JobsPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-6 py-12 mt-16">
       <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
-        Available Jobs
+        All Jobs
       </h2>
 
       {jobs.length === 0 ? (
@@ -79,9 +79,9 @@ const JobsPage = () => {
                     </p>
                   </div>
 
-                  <Link href={`/job/${job._id}`}>
-                    <button className="mt-4 w-full bg-[#040232] text-white font-medium py-2 rounded-lg hover:text-black hover:bg-blue-400 transition">
-                      Apply Now
+                  <Link href={`/admin/get-job/${job._id}`}>
+                    <button className="mt-4 w-full bg-blue-600 text-white font-medium py-2 rounded-lg hover:bg-blue-700 transition">
+                      See Applicants
                     </button>
                   </Link>
                 </div>
@@ -94,4 +94,4 @@ const JobsPage = () => {
   );
 };
 
-export default JobsPage;
+export default GetJob;

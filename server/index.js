@@ -39,6 +39,8 @@ app.use(
 
 app.use("/api/v1/contact", require("./routes/contactRoute"))
 app.use("/api/v1/auth", require("./routes/authRoute"))
+app.use("/api/v1/job", require("./routes/jobRoute"))
+app.use("/api/v1/application", require("./routes/applicationRouete"))
 
 
 

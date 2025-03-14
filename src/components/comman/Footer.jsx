@@ -6,9 +6,11 @@ import { useEffect, useState } from "react";
 import { MdOutlineMail } from "react-icons/md";
 
 import logo from "@/assets/logo.png";
+import { useSelector } from "react-redux";
 const Footer = () => {
   const [isClient, setIsClient] = useState(false);
 
+  const { token } = useSelector((state) => state.auth);
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -51,6 +53,17 @@ const Footer = () => {
               <Link href="/job" className="hover:text-white">
                 Job
               </Link>
+            </li>
+            <li>
+              {token ? (
+                <Link href="/admin/dashboard" className="hover:text-white">
+                  Login
+                </Link>
+              ) : (
+                <Link href="/login" className="hover:text-white">
+                  Login
+                </Link>
+              )}
             </li>
           </ul>
         </div>

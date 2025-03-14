@@ -1,18 +1,21 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useParams } from "next/navigation";
 
 const ApplicationsList = () => {
   const [applications, setApplications] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const { id } = useParams();
   useEffect(() => {
     const fetchApplications = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_BASE_URL}/contact/all`
+          `${process.env.NEXT_PUBLIC_BASE_URL}/application/getAll/${id}`
         );
-        setApplications(response.data.data);
+        console.log(response);
+        setApplications(response.data.applications);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching applications:", error);
@@ -27,16 +30,7 @@ const ApplicationsList = () => {
 
   return (
     <div className="p-4">
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <h2 className="text-xl font-bold mb-4">All Applications</h2>
+      <h2 className="text-xl font-bold text-center mb-4">All Applications</h2>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
