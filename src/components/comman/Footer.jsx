@@ -1,98 +1,174 @@
-"use client";
-import Image from "next/image";
 import Link from "next/link";
-import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
-import { useEffect, useState } from "react";
-import { MdOutlineMail } from "react-icons/md";
-
-import logo from "@/assets/logo.png";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import Image from "next/image";
+import logo from "@/assets/logo2.png";
 import { useSelector } from "react-redux";
-const Footer = () => {
-  const [isClient, setIsClient] = useState(false);
-
+export default function Footer() {
   const { token } = useSelector((state) => state.auth);
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) {
-    return null;
-  }
-
   return (
-    <footer className="bg-[#040232] text-white py-12">
-      <div className="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <Image src={logo} alt="not found" className="w-[70px]" />
-
-          <p className="text-white mt-3">
-            Office 510, B wing, Galleria Complex, Hiranandani Gardens, Powai,
-            Mumbai 400076
-          </p>
-        </div>
-
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Useful Links</h3>
-          <ul className="space-y-2 text-white">
-            <li>
-              <Link href="/about" className="hover:text-white">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/employers" className="hover:text-white">
-                Employers
-              </Link>
-            </li>
-            <li>
-              <Link href="/candidates" className="hover:text-white">
-                Candidates
-              </Link>
-            </li>
-            <li>
-              <Link href="/job" className="hover:text-white">
-                Job
-              </Link>
-            </li>
-            <li>
-              {token ? (
-                <Link href="/admin/dashboard" className="hover:text-white">
-                  Login
+    <footer className="w-full border-t bg-background">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
+          <div className="space-y-4">
+            <Link href="/" className="flex items-center gap-2">
+              <Image src={logo} alt="not found" className="w-44 lg:w-64" />
+            </Link>
+            <p className="text-sm text-muted-foreground">
+              Our mission is to bridge the gap between skilled professionals and
+              global businesses.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-base font-medium">Quick Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/"
+                  className="text-sm text-muted-foreground hover:text-foreground"
+                >
+                  Home
                 </Link>
-              ) : (
-                <Link href="/login" className="hover:text-white">
-                  Login
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-sm text-muted-foreground hover:text-foreground"
+                >
+                  About Us
                 </Link>
-              )}
-            </li>
-          </ul>
+              </li>
+              <li>
+                <Link
+                  href="/what-we-do"
+                  className="text-sm text-muted-foreground hover:text-foreground"
+                >
+                  What We Do
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-sm text-muted-foreground hover:text-foreground"
+                >
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-base font-medium">Usefull Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="job"
+                  className="text-sm text-muted-foreground hover:text-foreground"
+                >
+                  Jobs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/candidates"
+                  className="text-sm text-muted-foreground hover:text-foreground"
+                >
+                  Candidates
+                </Link>
+              </li>
+              <li>
+                {token ? (
+                  <Link
+                    href="/admin/dashboard"
+                    className="text-sm text-muted-foreground hover:text-foreground"
+                  >
+                    Login
+                  </Link>
+                ) : (
+                  <Link
+                    href="/login"
+                    className="text-sm text-muted-foreground hover:text-foreground"
+                  >
+                    Login
+                  </Link>
+                )}
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-sm text-muted-foreground hover:text-foreground"
+                >
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-base font-medium">Contact</h3>
+            <ul className="space-y-2">
+              <li className="text-sm text-muted-foreground">
+                Office 510, B wing, Galleria Complex,
+                <br />
+                Hiranandani Gardens, Powai, Mumbai 400076{" "}
+              </li>
+              <li className="text-sm text-muted-foreground">
+                Phone: 91 9202553151
+              </li>
+              <li className="text-sm text-muted-foreground">
+                Email: HR@brijinternationalservices.com
+              </li>
+            </ul>
+            <div className="flex space-x-4">
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                <Facebook className="h-5 w-5" />
+                <span className="sr-only">Facebook</span>
+              </Link>
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                <Twitter className="h-5 w-5" />
+                <span className="sr-only">Twitter</span>
+              </Link>
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                <Instagram className="h-5 w-5" />
+                <span className="sr-only">Instagram</span>
+              </Link>
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                <Linkedin className="h-5 w-5" />
+                <span className="sr-only">LinkedIn</span>
+              </Link>
+            </div>
+          </div>
         </div>
-
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Get in touch</h3>
-          <p className="flex items-center gap-2 text-white">
-            <FaPhoneAlt /> 91 9202553151
+        <div className="mt-8 border-t pt-8 flex flex-col sm:flex-row justify-between items-center">
+          <p className="text-xs text-muted-foreground">
+            &copy; {new Date().getFullYear()} Developed By I Next ETS . All
+            rights reserved.
           </p>
-          <p className="flex items-center gap-2 text-white">
-            <MdOutlineMail /> HR@brijinternationalservices.com
-          </p>
-
-          <p className="flex items-start gap-2 text-white mt-4">
-            <FaMapMarkerAlt className="mt-1" />
-            Office 510, B wing, Galleria Complex, Hiranandani Gardens, Powai,
-            Mumbai 400076
-          </p>
+          <div className="flex gap-4 mt-4 sm:mt-0">
+            <Link
+              href="/"
+              className="text-xs text-muted-foreground hover:text-foreground"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/"
+              className="text-xs text-muted-foreground hover:text-foreground"
+            >
+              Terms of Service
+            </Link>
+          </div>
         </div>
-      </div>
-
-      <div className="mt-5 border-t border-gray-700 pt-6 text-center text-white">
-        <p>Developed By I Next Ets </p>
-        <Link href="#" className="hover:text-white">
-          Terms & Conditions
-        </Link>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

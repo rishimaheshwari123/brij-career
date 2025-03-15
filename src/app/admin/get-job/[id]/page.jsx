@@ -52,7 +52,7 @@ const ApplicationsList = () => {
                 <td className="py-2 px-4 border">{app.applicationFor}</td>
                 <td className="py-2 px-4 border">
                   <a
-                    href={`http://localhost:8080${app.resumeUrl}`}
+                    href={`https://brij-career.onrender.com${app.resumeUrl}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 underline"

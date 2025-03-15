@@ -65,6 +65,7 @@ export default function AboutPage() {
               location: "Morocco",
               role: "Hydrokken - Strategic Partner",
               image: mustfa,
+              is: true,
             },
           ].map((partner, index) => (
             <div
@@ -74,7 +75,7 @@ export default function AboutPage() {
               <Image
                 src={partner.image}
                 alt={partner.name}
-                className="w-full h-[40vh] object-cover"
+                className={`w-full h-[45vh] object-cover`}
               />
               <div className="bg-gray-800 text-white text-center p-3 flex-1 flex flex-col justify-center">
                 <h3 className="text-xl font-semibold">{partner.name}</h3>

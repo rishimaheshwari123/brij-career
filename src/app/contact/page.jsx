@@ -4,7 +4,8 @@ import { FaLocationDot, FaPhone, FaPaperPlane } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import axios from "axios";
 import Swal from "sweetalert2";
-
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import Link from "next/link";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -71,7 +72,7 @@ const Contact = () => {
         loading="lazy"
       ></iframe>
 
-      <div className="grid lg:grid-cols-2 gap-10 my-20 items-center">
+      <div className="grid lg:grid-cols-2 gap-10  my-20 items-center max-w-7xl mx-auto p-5">
         <div className="space-y-6">
           <div className="flex items-center gap-4">
             <span className="p-3 bg-[#040232] text-white rounded-full text-xl">
@@ -97,6 +98,36 @@ const Contact = () => {
               {" "}
               HR@brijinternationalservices.com
             </span>
+          </div>
+          <div className="flex space-x-4 mx-auto justify-center">
+            <Link
+              href="#"
+              className="text-muted-foreground hover:text-foreground"
+            >
+              <Facebook className="h-10 w-10" />
+              <span className="sr-only">Facebook</span>
+            </Link>
+            <Link
+              href="#"
+              className="text-muted-foreground hover:text-foreground"
+            >
+              <Twitter className="h-10 w-10" />
+              <span className="sr-only">Twitter</span>
+            </Link>
+            <Link
+              href="#"
+              className="text-muted-foreground hover:text-foreground"
+            >
+              <Instagram className="h-10 w-10" />
+              <span className="sr-only">Instagram</span>
+            </Link>
+            <Link
+              href="#"
+              className="text-muted-foreground hover:text-foreground"
+            >
+              <Linkedin className="h-10 w-10" />
+              <span className="sr-only">LinkedIn</span>
+            </Link>
           </div>
         </div>
 

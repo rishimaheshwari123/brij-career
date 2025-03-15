@@ -27,7 +27,7 @@ const Navbar = () => {
           : "max-w-[92%] mx-auto fixed top-14 left-0 right-0 rounded-lg"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6  ">
+      <nav className="max-w-7xl mx-auto px-6  py-1">
         <div className="flex justify-between items-center">
           {/* Logo and Mobile Menu Button */}
           <div className="flex justify-between w-full lg:w-auto items-center">
