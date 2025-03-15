@@ -31,7 +31,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo and Mobile Menu Button */}
           <div className="flex justify-between w-full lg:w-auto items-center">
-            <Image src={logo} alt="not found" className="w-44 lg:w-64" />
+            <Image src={logo} alt="not found" className="w-44 lg:w-64 rounded-2xl" />
 
             <button
               className="lg:hidden text-2xl"
@@ -135,33 +135,33 @@ const Navbar = () => {
         {isMenuOpen && (
           <ul className="lg:hidden absolute top-16 left-0 w-full bg-white z-50 shadow-lg p-6 max-h-[80vh] overflow-y-auto">
             <li>
-              <Link href="/" className="block py-2">
+              <Link href="/" className="block py-2" onClick={()=>setIsMenuOpen(false)} >
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/about" className="block py-2">
+              <Link href="/about" className="block py-2" onClick={()=>setIsMenuOpen(false)} >
                 About
               </Link>
             </li>
             <li>
-              <Link href="/employers" className="block py-2">
+              <Link href="/employers" className="block py-2" onClick={()=>setIsMenuOpen(false)}>
                 Employers
               </Link>
             </li>
             <li>
-              <Link href="/candidates" className="block py-2">
+              <Link href="/candidates" className="block py-2" onClick={()=>setIsMenuOpen(false)}>
                 Candidates
               </Link>
             </li>
 
             <li>
-              <Link href="/job" className="block py-2">
+              <Link href="/job" className="block py-2" onClick={()=>setIsMenuOpen(false)}>
                 Job
               </Link>
             </li>
             <li>
-              <Link href="/what-we-do">What We Do</Link>
+              <Link href="/what-we-do" onClick={()=>setIsMenuOpen(false)} >What We Do</Link>
             </li>
             {/* <li>
               <button
@@ -218,6 +218,7 @@ const Navbar = () => {
             <div className="flex gap-4">
               <Link
                 href={"/contact"}
+                onClick={()=>setIsMenuOpen(false)}
                 className="bg-[#00BFB3] text-white px-6 py-2.5 rounded-md hover:bg-[#00a69b] transition-colors font-medium"
               >
                 Get Contact
