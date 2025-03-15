@@ -43,12 +43,6 @@ export default function AboutPage() {
         <div className="mt-10 grid md:grid-cols-4 gap-8">
           {[
             {
-              name: "Mr. Anand Kumar Jha",
-              location: "Dubai, UAE",
-              role: "Rshmy Technical Services - Strategic Partner",
-              image: anand,
-            },
-            {
               name: "Mr. Brijesh Tiwari",
               location: "",
               role: "Founder - Brij International Services",
@@ -61,6 +55,12 @@ export default function AboutPage() {
               image: prachi,
             },
             {
+              name: "Mr. Anand Kumar Jha",
+              location: "Dubai, UAE",
+              role: "Rshmy Technical Services - Strategic Partner",
+              image: anand,
+            },
+            {
               name: "Mr. Mustafa Belkhayate",
               location: "Morocco",
               role: "Hydrokken - Strategic Partner",
@@ -69,18 +69,16 @@ export default function AboutPage() {
           ].map((partner, index) => (
             <div
               key={index}
-              className="relative group rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105"
+              className="relative rounded-lg overflow-hidden shadow-lg transform transition duration-300 hover:scale-105 h-[55vh] flex flex-col"
             >
               <Image
                 src={partner.image}
                 alt={partner.name}
-                className="w-full h-[50vh] object-cover"
+                className="w-full h-[40vh] object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-white p-4 transition-opacity duration-300">
+              <div className="bg-gray-800 text-white text-center p-3 flex-1 flex flex-col justify-center">
                 <h3 className="text-xl font-semibold">{partner.name}</h3>
-                <p className="text-sm font-medium text-center">
-                  {partner.role}
-                </p>
+                <p className="text-sm font-medium">{partner.role}</p>
                 <p className="text-sm">{partner.location}</p>
               </div>
             </div>
