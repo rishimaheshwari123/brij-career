@@ -4,6 +4,8 @@ import { FaLocationDot, FaPhone, FaPaperPlane } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import Link from "next/link";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -64,84 +66,112 @@ const Contact = () => {
 
   if (!isClient) return null;
   return (
-    <div className="mt-40 w-11/12 mx-auto">
-      <div className="grid lg:grid-cols-2 gap-10 my-20 items-center">
-        <div className="space-y-6">
-          <div className="flex items-center gap-4">
-            <span className="p-3 bg-[#040232] text-white rounded-full text-xl">
-              <FaLocationDot />
-            </span>
-            <span className="text-gray-700">
-              Office 510, B wing, Galleria Complex, Hiranandani Gardens, Powai,
-              Mumbai 400076
-            </span>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <span className="p-3 bg-[#040232] text-white rounded-full text-xl">
-              <FaPhone />
-            </span>
-            <span className="text-gray-700"> 91 9202553151</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <span className="p-3 bg-[#040232] text-white rounded-full text-xl">
-              <MdEmail />
-            </span>
-            <span className="text-gray-700">
-              {" "}
-              HR@brijinternationalservices.com
-            </span>
-          </div>
+    <div className="grid lg:grid-cols-2 gap-10  my-20 items-center max-w-7xl mx-auto p-5">
+      <div className="space-y-6">
+        <div className="flex items-center gap-4">
+          <span className="p-3 bg-[#040232] text-white rounded-full text-xl">
+            <FaLocationDot />
+          </span>
+          <span className="text-gray-700">
+            AddrOffice 510, B wing, Galleria Complex, Hiranandani Gardens,
+            Powai, Mumbai 400076ess
+          </span>
         </div>
 
-        <form
-          className="bg-white p-6 rounded-lg shadow-lg"
-          onSubmit={handleSubmit}
-        >
-          <div className="grid md:grid-cols-2 gap-4">
-            <input
-              type="text"
-              placeholder="Name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="p-3 border rounded-md outline-none focus:border-[#00BFB3]"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="p-3 border rounded-md outline-none focus:border-[#00BFB3]"
-            />
-          </div>
-          <div className="grid  gap-4 mt-4">
-            <input
-              type="text"
-              placeholder="Phone"
-              name="contact"
-              value={formData.contact}
-              onChange={handleChange}
-              className="p-3 border rounded-md outline-none focus:border-[#00BFB3]"
-            />
-          </div>
-
-          <textarea
-            placeholder="Message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            className="p-3 border rounded-md outline-none focus:border-[#00BFB3] w-full mt-4 h-28"
-          ></textarea>
-          <button
-            type="submit"
-            className="flex items-center gap-2 bg-[#040232] text-white px-5 py-3 rounded-md mt-4 w-full justify-center hover:bg-teal-600 transition-all"
+        <div className="flex items-center gap-4">
+          <span className="p-3 bg-[#040232] text-white rounded-full text-xl">
+            <FaPhone />
+          </span>
+          <span className="text-gray-700"> 91 9202553151</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <span className="p-3 bg-[#040232] text-white rounded-full text-xl">
+            <MdEmail />
+          </span>
+          <span className="text-gray-700">
+            {" "}
+            HR@brijinternationalservices.com
+          </span>
+        </div>
+        <div className="flex space-x-4 mx-auto justify-center">
+          <Link
+            href="#"
+            className="text-muted-foreground hover:text-foreground"
           >
-            <FaPaperPlane /> Send Message
-          </button>
-        </form>
+            <Facebook className="h-10 w-10" />
+            <span className="sr-only">Facebook</span>
+          </Link>
+          <Link
+            href="#"
+            className="text-muted-foreground hover:text-foreground"
+          >
+            <Twitter className="h-10 w-10" />
+            <span className="sr-only">Twitter</span>
+          </Link>
+          <Link
+            href="#"
+            className="text-muted-foreground hover:text-foreground"
+          >
+            <Instagram className="h-10 w-10" />
+            <span className="sr-only">Instagram</span>
+          </Link>
+          <Link
+            href="#"
+            className="text-muted-foreground hover:text-foreground"
+          >
+            <Linkedin className="h-10 w-10" />
+            <span className="sr-only">LinkedIn</span>
+          </Link>
+        </div>
       </div>
+
+      <form
+        className="bg-white p-6 rounded-lg shadow-lg"
+        onSubmit={handleSubmit}
+      >
+        <div className="grid md:grid-cols-2 gap-4">
+          <input
+            type="text"
+            placeholder="Name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className="p-3 border rounded-md outline-none focus:border-[#00BFB3]"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="p-3 border rounded-md outline-none focus:border-[#00BFB3]"
+          />
+        </div>
+        <div className="grid  gap-4 mt-4">
+          <input
+            type="text"
+            placeholder="Phone"
+            name="contact"
+            value={formData.contact}
+            onChange={handleChange}
+            className="p-3 border rounded-md outline-none focus:border-[#00BFB3]"
+          />
+        </div>
+
+        <textarea
+          placeholder="Message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          className="p-3 border rounded-md outline-none focus:border-[#00BFB3] w-full mt-4 h-28"
+        ></textarea>
+        <button
+          type="submit"
+          className="flex items-center gap-2 bg-[#040232] text-white px-5 py-3 rounded-md mt-4 w-full justify-center hover:bg-teal-600 transition-all"
+        >
+          <FaPaperPlane /> Send Message
+        </button>
+      </form>
     </div>
   );
 };

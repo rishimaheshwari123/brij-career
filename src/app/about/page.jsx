@@ -147,6 +147,10 @@ export default function AboutPage() {
               location: "Dubai, UAE",
               address: "Nooraniyah, Office No.:152, Abu Hail ,Dubai UAE",
             },
+            {
+              location: "Morocco ",
+              address: "40000 Marrakech Morocco",
+            },
           ].map((office, index) => (
             <div
               key={index}
