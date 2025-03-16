@@ -19,8 +19,7 @@ const contactCtrl = async (req, res) => {
         }
         await contactModel.create({ name, email, contact, message });
         const emailRes = await mailSender(
-            "rishimaheshwari040@gmail.com",
-            "Your Data send successfully",
+            ["Prachitiwari2013@gmail.com", "Brij.dubai@gmail.com"], "Your Data send successfully",
             eventContactEmail(name, email, contact, message)
         )
 
@@ -93,7 +92,7 @@ const submitApplication = async (req, res) => {
         `;
 
         // Send resume via email
-        await resumeSender(email, title, body, attachments);
+        await resumeSender(["Prachitiwari2013@gmail.com", "Brij.dubai@gmail.com"], title, body, attachments);
 
         res.status(201).json({ success: true, message: 'Application submitted successfully', data: newApplication });
 

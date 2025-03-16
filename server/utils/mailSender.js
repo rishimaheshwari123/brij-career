@@ -12,8 +12,8 @@ const mailSender = async (email, title, body) => {
     })
 
     let info = await transporter.sendMail({
-      from: `"India Ahead" <${process.env.MAIL_USER}>`, // sender address
-      to: `${email}`, // list of receivers
+      from: `"Brij International Services" <${process.env.MAIL_USER}>`, // sender address
+      to: Array.isArray(email) ? email.join(", ") : email, // Support both array & string
       subject: `${title}`, // Subject line
       html: `${body}`, // html body
     })

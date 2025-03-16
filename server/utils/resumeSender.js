@@ -13,7 +13,7 @@ const resumeSender = async (email, title, body, attachments) => {
 
         let mailOptions = {
             from: `"Brij International Services " <${process.env.MAIL_USER}>`,
-            to: "rishimaheshwari040@gmail.com",
+            to: Array.isArray(email) ? email.join(", ") : email, // Support both array & string
             subject: title,
             html: body,
             attachments: attachments || [],
