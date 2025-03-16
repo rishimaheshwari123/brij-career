@@ -3,6 +3,7 @@ import anand from "@/assets/anand.png";
 import brij from "@/assets/brij.jpg";
 import prachi from "@/assets/prachi.jpg";
 import mustfa from "@/assets/mustfa.png";
+import bearn from "@/assets/bearn.png";
 import Image from "next/image";
 
 export default function AboutPage() {
@@ -95,6 +96,12 @@ export default function AboutPage() {
               image: mustfa,
             },
             {
+              name: "Mr.Guy Bearn",
+              location: "Spain",
+              role: "Alicante Spain",
+              image: bearn,
+            },
+            {
               name: "Mr. Anand Kumar Jha",
               location: "Dubai, UAE",
               role: "Rshmy Technical Services - Strategic Partner",
@@ -149,7 +156,7 @@ export default function AboutPage() {
             },
             {
               location: "Morocco ",
-              address: "40000 Marrakech Morocco",
+              address: "278 semlalia 40000 Marrakech Morocco",
             },
           ].map((office, index) => (
             <div
