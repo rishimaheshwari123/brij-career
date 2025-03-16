@@ -158,6 +158,11 @@ export default function AboutPage() {
               location: "Morocco ",
               address: "278 semlalia 40000 Marrakech Morocco",
             },
+            {
+              location: "Oman ",
+              address:
+                "Al Manal Building, Office 607, Madinat Sultan Qaboos, Muscat, Oman",
+            },
           ].map((office, index) => (
             <div
               key={index}
