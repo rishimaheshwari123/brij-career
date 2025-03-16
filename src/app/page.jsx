@@ -1,6 +1,7 @@
 import ExpertiseSection from "@/components/core/ExpertiseSection";
 import HeroSection from "@/components/core/HeroSection";
 import JobOpportunities from "@/components/core/JobOpportunities";
+import OurClients from "@/components/core/OurClients";
 
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
         </p>
       </div>
       <ExpertiseSection />
+      <OurClients />
 
       <div className="text-center my-16">
         <p className="font-bold text-2xl lg:text-4xl">Find your perfect fit</p>
