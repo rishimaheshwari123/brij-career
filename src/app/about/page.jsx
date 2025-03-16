@@ -97,8 +97,8 @@ export default function AboutPage() {
             },
             {
               name: "Mr.Guy Bearn",
-              location: "Spain",
-              role: "Alicante Spain",
+              location: " Spain",
+              role: "Florical - Stragic Partner",
               image: bearn,
             },
             {
