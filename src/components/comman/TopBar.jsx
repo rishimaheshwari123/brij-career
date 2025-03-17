@@ -48,7 +48,10 @@ const TopHeader = () => {
 
             <div className="flex space-x-4">
               <Zoom triggerOnce>
-                <Link href="/" aria-label="Facebook">
+                <Link
+                  href="https://www.facebook.com/profile.php?id=61574107173934&mibextid=wwXIfr&mibextid=wwXIfr"
+                  aria-label="Facebook"
+                >
                   <FaFacebook
                     size={22}
                     className="text-blue-600 hover:scale-125 transition-transform duration-300"
@@ -56,7 +59,10 @@ const TopHeader = () => {
                 </Link>
               </Zoom>
               <Zoom triggerOnce delay={100}>
-                <Link href="/" aria-label="Instagram">
+                <Link
+                  href="https://www.instagram.com/brij_international_service_?igsh=MWYxb3hjbGdlNTJ5NQ%3D%3D&utm_source=qr"
+                  aria-label="Instagram"
+                >
                   <FaInstagram
                     size={22}
                     className="text-pink-600 hover:scale-125 transition-transform duration-300"

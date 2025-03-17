@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, MapPin, Twitter } from "lucide-react";
 import Image from "next/image";
 import logo from "@/assets/logo2.png";
 import { useSelector } from "react-redux";
@@ -118,32 +118,26 @@ export default function Footer() {
             </ul>
             <div className="flex space-x-4">
               <Link
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61574107173934&mibextid=wwXIfr&mibextid=wwXIfr"
                 className="text-muted-foreground hover:text-foreground"
               >
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </Link>
+
               <Link
-                href="#"
-                className="text-muted-foreground hover:text-foreground"
-              >
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link
-                href="#"
+                href="https://www.instagram.com/brij_international_service_?igsh=MWYxb3hjbGdlNTJ5NQ%3D%3D&utm_source=qr"
                 className="text-muted-foreground hover:text-foreground"
               >
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Link>
               <Link
-                href="#"
+                href="https://www.google.com/maps?q=Office+510,+B+wing,+Galleria+Complex,+Hiranandani+Gardens,+Powai,+Mumbai+400076&z=17&hl=en"
                 className="text-muted-foreground hover:text-foreground"
               >
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
+                <MapPin className="h-5 w-5" />
+                <span className="sr-only">Map</span>
               </Link>
             </div>
           </div>

@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const GetJob = () => {
   const [jobs, setJobs] = useState([]);
@@ -24,6 +27,45 @@ const GetJob = () => {
     fetchJobs();
   }, []);
 
+  const handleDeleteJob = async (id) => {
+    toast(
+      ({ closeToast }) => (
+        <div>
+          <p className="text-gray-800 font-semibold">
+            Do you want to delete the Job?
+          </p>
+          <div className="flex gap-4 mt-2">
+            <button
+              onClick={async () => {
+                try {
+                  await axios.delete(
+                    `${process.env.NEXT_PUBLIC_BASE_URL}/job/delete/${id}`
+                  );
+                  toast.success("Job deleted successfully!");
+                  setJobs(jobs.filter((job) => job._id !== id));
+                } catch (error) {
+                  toast.error("Error deleting job!");
+                  console.error("Error deleting job:", error);
+                }
+                closeToast();
+              }}
+              className="bg-red-600 text-white px-3 py-1 rounded-md"
+            >
+              Yes, Delete
+            </button>
+            <button
+              onClick={closeToast}
+              className="bg-gray-300 text-gray-800 px-3 py-1 rounded-md"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      ),
+      { autoClose: false, closeOnClick: false }
+    );
+  };
+
   const toggleJobDetails = (id) => {
     setExpandedJob(expandedJob === id ? null : id);
   };
@@ -43,7 +85,6 @@ const GetJob = () => {
               key={job._id}
               className="border border-gray-200 rounded-lg shadow-lg bg-white transition-all hover:shadow-xl overflow-hidden"
             >
-              {/* Job Header */}
               <div
                 className="flex justify-between items-center p-6 cursor-pointer"
                 onClick={() => toggleJobDetails(job._id)}
@@ -51,9 +92,14 @@ const GetJob = () => {
                 <h3 className="text-xl font-semibold text-gray-800">
                   {job.title}
                 </h3>
-                <button className="text-gray-600 hover:text-gray-900">
-                  {expandedJob === job._id ? <FaMinus /> : <FaPlus />}
-                </button>
+                <div className="flex gap-5">
+                  <button onClick={() => handleDeleteJob(job._id)}>
+                    <MdDelete size={25} color="red" />
+                  </button>
+                  <button className="text-gray-600 hover:text-gray-900">
+                    {expandedJob === job._id ? <FaMinus /> : <FaPlus />}
+                  </button>
+                </div>
               </div>
 
               {expandedJob === job._id && (
