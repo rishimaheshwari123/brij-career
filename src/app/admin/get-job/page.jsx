@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-import { FaPlus, FaMinus } from "react-icons/fa";
+import { FaPlus, FaMinus, FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -11,7 +11,16 @@ import "react-toastify/dist/ReactToastify.css";
 const GetJob = () => {
   const [jobs, setJobs] = useState([]);
   const [expandedJob, setExpandedJob] = useState(null);
+  const [editJob, setEditJob] = useState(null);
+  const [formData, setFormData] = useState({
+    title: "",
+    desc: "",
+    contact: "",
+    experience: "",
+    salary: "",
+  });
 
+  // Fetch Jobs
   useEffect(() => {
     const fetchJobs = async () => {
       try {
@@ -19,6 +28,7 @@ const GetJob = () => {
           `${process.env.NEXT_PUBLIC_BASE_URL}/job/getAll`
         );
         setJobs(response.data.jobs);
+        console.log(response.data.jobs);
       } catch (error) {
         console.error("Error fetching jobs:", error);
       }
@@ -27,6 +37,7 @@ const GetJob = () => {
     fetchJobs();
   }, []);
 
+  // Delete Job
   const handleDeleteJob = async (id) => {
     toast(
       ({ closeToast }) => (
@@ -70,6 +81,36 @@ const GetJob = () => {
     setExpandedJob(expandedJob === id ? null : id);
   };
 
+  const handleEditClick = (job) => {
+    setEditJob(job._id);
+    setFormData({
+      title: job.title,
+      desc: job.desc,
+      contact: job.contact,
+      experience: job.experience,
+      salary: job.salary,
+    });
+  };
+
+  // Update Job
+  const handleUpdateJob = async () => {
+    try {
+      const response = await axios.put(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/job/update/${editJob}`,
+        formData
+      );
+      toast.success("Job updated successfully!");
+
+      setJobs(
+        jobs.map((job) => (job._id === editJob ? response.data.job : job))
+      );
+      setEditJob(null);
+    } catch (error) {
+      toast.error("Error updating job!");
+      console.error("Error updating job:", error);
+    }
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-6 py-12 mt-16">
       <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
@@ -93,6 +134,9 @@ const GetJob = () => {
                   {job.title}
                 </h3>
                 <div className="flex gap-5">
+                  <button onClick={() => handleEditClick(job)}>
+                    <FaEdit size={20} color="blue" />
+                  </button>
                   <button onClick={() => handleDeleteJob(job._id)}>
                     <MdDelete size={25} color="red" />
                   </button>
@@ -104,18 +148,10 @@ const GetJob = () => {
 
               {expandedJob === job._id && (
                 <div className="p-6 border-t border-gray-200">
-                  <p className="text-gray-700">
-                    {job.desc.split(".").map((sentence, index) => (
-                      <span key={index}>
-                        {sentence.trim()}
-                        {index !== job.desc.split(".").length - 1 && <br />}
-                      </span>
-                    ))}
-                  </p>
-
+                  <p className="text-gray-700">{job.desc}</p>
                   <div className="mt-4 space-y-2 text-gray-700">
                     <p>
-                      <strong>Experience:</strong> {job.experience} years
+                      <strong>experience:</strong> {job.experience} years
                     </p>
                     <p>
                       <strong>Salary:</strong> {job.salary}
@@ -134,6 +170,81 @@ const GetJob = () => {
               )}
             </div>
           ))}
+        </div>
+      )}
+
+      {/* Edit Job Modal */}
+      {editJob && (
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg w-96 shadow-lg">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">
+              Edit Job
+            </h2>
+
+            <label className="block text-gray-700">Job Title</label>
+            <input
+              type="text"
+              value={formData.title}
+              onChange={(e) =>
+                setFormData({ ...formData, title: e.target.value })
+              }
+              className="w-full border p-2 rounded mb-3"
+            />
+
+            <label className="block text-gray-700">Description</label>
+            <textarea
+              value={formData.desc}
+              onChange={(e) =>
+                setFormData({ ...formData, desc: e.target.value })
+              }
+              className="w-full border p-2 rounded mb-3"
+            />
+
+            <label className="block text-gray-700">Contact</label>
+            <input
+              type="text"
+              value={formData.contact}
+              onChange={(e) =>
+                setFormData({ ...formData, contact: e.target.value })
+              }
+              className="w-full border p-2 rounded mb-3"
+            />
+
+            <label className="block text-gray-700">experience (years)</label>
+            <input
+              type="text"
+              value={formData.experience}
+              onChange={(e) =>
+                setFormData({ ...formData, experience: e.target.value })
+              }
+              className="w-full border p-2 rounded mb-3"
+            />
+
+            <label className="block text-gray-700">Salary</label>
+            <input
+              type="text"
+              value={formData.salary}
+              onChange={(e) =>
+                setFormData({ ...formData, salary: e.target.value })
+              }
+              className="w-full border p-2 rounded mb-3"
+            />
+
+            <div className="flex justify-end gap-4">
+              <button
+                onClick={() => setEditJob(null)}
+                className="bg-gray-400 text-white px-4 py-2 rounded"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleUpdateJob}
+                className="bg-blue-600 text-white px-4 py-2 rounded"
+              >
+                Update
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>
