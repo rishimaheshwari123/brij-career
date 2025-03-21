@@ -118,7 +118,7 @@ const GetJob = () => {
                       <strong>Experience:</strong> {job.experience} years
                     </p>
                     <p>
-                      <strong>Salary:</strong> ₹{job.salary}
+                      <strong>Salary:</strong> {job.salary}
                     </p>
                     <p>
                       <strong>Contact:</strong> {job.contact}
