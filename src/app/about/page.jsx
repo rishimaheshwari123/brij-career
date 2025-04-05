@@ -45,11 +45,11 @@ export default function AboutPage() {
         </h2>
         <div className="flex flex-wrap justify-center gap-8">
           {[
-            {
-              name: "Mr. Brijesh Tiwari",
-              role: "Founder - Brij International Services",
-              image: brij,
-            },
+            // {
+            //   name: "Mr. Brijesh Tiwari",
+            //   role: "Founder - Brij International Services",
+            //   image: brij,
+            // },
             {
               name: "Mrs. Prachi",
               location: "Mumbai, India",
