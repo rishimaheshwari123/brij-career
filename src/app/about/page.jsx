@@ -41,21 +41,21 @@ export default function AboutPage() {
       {/* Company Management */}
       <div className="mt-20">
         <h2 className="text-4xl font-bold text-[#040232] text-center mb-10">
-          Company Management
+          {/* Company Management */}
         </h2>
-        <div className="flex flex-wrap justify-center gap-8">
+        {/* <div className="flex flex-wrap justify-center gap-8">
           {[
             // {
             //   name: "Mr. Brijesh Tiwari",
             //   role: "Founder - Brij International Services",
             //   image: brij,
             // },
-            {
-              name: "Mrs. Prachi",
-              location: "Mumbai, India",
-              role: "CEO - Brij International Services",
-              image: prachi,
-            },
+            // {
+            //   name: "Mrs. Prachi",
+            //   location: "Mumbai, India",
+            //   role: "CEO - Brij International Services",
+            //   image: prachi,
+            // },
           ].map((person, index) => (
             <div
               key={index}
@@ -79,7 +79,7 @@ export default function AboutPage() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
 
       {/* Strategic Partners */}
