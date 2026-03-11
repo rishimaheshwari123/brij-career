@@ -107,6 +107,12 @@ export default function AboutPage() {
               role: "Rshmy Technical Services - Strategic Partner",
               image: anand,
             },
+            {
+              name: "Mrs. Prachi",
+              location: "Mumbai, India",
+              role: "CEO - Brij International Services",
+              image: prachi,
+            },
           ].map((person, index) => (
             <div
               key={index}
