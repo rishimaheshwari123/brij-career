@@ -95,6 +95,12 @@ export default function AboutPage() {
               role: "Hydrokken - Strategic Partner",
               image: mustfa,
             },
+              {
+              name: "Mrs. Prachi Tiwari",
+              location: "",
+              role: "CEO - Brij International Services",
+              image: prachi,
+            },
             {
               name: "Mr.Guy Bearn",
               location: " Spain",
@@ -107,12 +113,7 @@ export default function AboutPage() {
               role: "Rshmy Technical Services - Strategic Partner",
               image: anand,
             },
-            {
-              name: "Mrs. Prachi",
-              location: "Mumbai, India",
-              role: "CEO - Brij International Services",
-              image: prachi,
-            },
+          
           ].map((person, index) => (
             <div
               key={index}
